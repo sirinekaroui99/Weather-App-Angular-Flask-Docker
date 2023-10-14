@@ -1,0 +1,11 @@
+#connecter zookeeper : C:\kafka_2.13-3.3.2>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+#connecter kafka server : C:\kafka_2.13-3.3.2>.\bin\windows\kafka-server-start.bat .\config\server.properties
+#creation kafka Topic : C:\kafka_2.13-3.3.2\bin\windows>kafka-topics.bat --create --topic nom_topic --bootstrap-server localhost:9092
+#affichage du contenu du topic : C:\kafka_2.13-3.3.2\bin\windows>kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic nom_topic --from-beginning
+
+mongodbconnection 
+
+cmd-> mongod  : server
+cmd-> mongo : client
+
+flask run commnad : flask run

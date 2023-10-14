@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="forecast.component.scss">
+</head>
+<body>
+
+    <!-- navbar start-->
+    <div >
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #6559e0;" justify-content-end>
+            <a class="navbar-brand" href="#" style="color: bisque; text-shadow: 1px 1px 2px rgb(19, 12, 82), 0 0 1em rgb(124, 124, 228), 0 0 0.2em blue;">Weather App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="#" [routerLink]="['/signup']" target="_blank" style="color: bisque; text-shadow: 1px 1px 2px rgb(19, 12, 82), 0 0 1em rgb(124, 124, 228), 0 0 0.2em blue;">Signup</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" [routerLink]="['/Signin']" target="_blank" style="color: bisque; text-shadow: 1px 1px 2px rgb(19, 12, 82), 0 0 1em rgb(124, 124, 228), 0 0 0.2em blue;">Signin</a>
+                </li>
+               
+              </ul>
+           
+            </div>
+          </nav>
+    </div> 
+ <!-- navbar finish-->
+
+  <!-- navbar weather widget start-->
+<div class="container">
+    <div class="weather-side">
+      <div class="weather-gradient"></div>
+      <div class="date-container">
+        <h2 class="date-dayname">{{weather?.date_time}}</h2><i class="location-icon" data-feather="map-pin"></i><span class="location">{{weather?.city}}</span>
+      </div>
+      <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+        <h1 class="weather-temp">{{weather?.temperature}}°C</h1>
+        <h3 class="weather-desc">{{weather?.weather_desc}}</h3>
+      </div>
+    </div>
+    <div class="info-side">
+      <div class="today-info-container">
+        <div class="today-info">
+          <div class="temperature_minimale"> <span class="title">minimal tempreture</span><span class="value">{{weather?.temperature_minimale}}°C</span>
+            <div class="clear"></div>
+          </div>
+          <div class="temperature_maximale"> <span class="title">Maximum tepreture</span><span class="value">{{weather?.temperature_maximale}}°C</span>
+            <div class="clear"></div>
+          </div>
+          <div class="humidity"> <span class="title">humidity</span><span class="value">{{weather?.Humidity}} %</span>
+            <div class="clear"></div>
+          </div>
+          <div class="pressure"> <span class="title">Presure</span><span class="value">{{weather?.pressure}} Pa</span>
+            <div class="clear"></div>
+          </div>
+          <div class="wind_speed"> <span class="title">Wind</span><span class="value">{{weather?.wind_speed}} km/h</span>
+            <div class="clear"></div>
+          </div>
+          <div class="sunrise_time"> <span class="title">Sunrise</span><span class="value">{{weather?.sunrise_time}}</span>
+            <div class="clear"></div>
+          </div>
+          <div class="sunset_time"> <span class="title">Sunset</span><span class="value">{{weather?.sunset_time}}</span>
+            
+            <div class="clear"></div>
+            
+          </div>
+        </div>
+      </div>
+    
+      <div class="week-container"  >
+        <ul class="week-list"   >
+          <li class="day-icon" *ngFor="let dailyWeather of dailyWeathers"><i class="day-icon" data-feather="sun">{{ dailyWeather.date | date:'longDate' }}</i><span class="day-name">Tue</span><span class="day-temp">{{dailyWeather?.weathers[0].main.temp}}°C</span></li>
+
+          <div class="clear"></div>
+        </ul>
+      </div>
+   
+      <div class="location-container">
+        <button class="location-button" disabled> <i data-feather="map-pin"></i><span>Change location</span></button>
+      </div>
+    
+    </div>
+   
+  </div> 
+<!-- navbar weather widget finish-->
+</body>
+<div class="pip">
+
+  <div class="container">
+   
+    <div class="info-side">
+ 
+    
+      <div class="week-container"  >
+        <ul class="week-list" >
+          <li class="day-icon" *ngFor="let we of firstDayWeathers" ><i class="day-icon" data-feather="sun">{{ we.formattedDate}}</i><span class="day-name">{{ we.weather.main.temp }}°C</span><span class="day-temp">{{ we.weather.weather.description }}</span></li>
+
+          <div class="clear"></div>
+        </ul>
+      </div>
+   
+   
+    
+    </div>
+   
+  </div> 
+
+</div>
+</html>

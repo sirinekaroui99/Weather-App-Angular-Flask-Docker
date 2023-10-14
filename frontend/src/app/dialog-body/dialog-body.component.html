@@ -1,0 +1,74 @@
+<div class="card text-center" style="box-shadow: 0 4px 6px 0 rgb(238, 204, 204); ">
+    <div class="card-body" [formGroup]="myForm" >
+        <h3 class="mb-3"><span class="text-primary">Update your profile !</span></h3>
+        <div class="toggle-block">
+            <ol class="position-relative carousel-indicators justify-content-center">
+                <li class="active"></li>
+            </ol>
+            <div class="input-group mb-2" >
+                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                <input type="email" class="form-control" placeholder="Email address" formControlName="email">
+            </div>
+            <div class="input-group mb-4">
+                <span class="input-group-text"><i class='fas fa-city'></i></span>
+                <input type="city" class="form-control" placeholder="city" formControlName="city">
+            </div>
+            
+           
+            <button class="btn  btn-primary mb-4" style="margin-right: 8px"  [routerLink]="['/profile']" target="_self">Ignore</button>
+            <button class="btn  btn-outline-primary mb-4 toggle-btn" (click)="UpdateUser()" [routerLink]="['/profile']" target="_self"  >Save Changes</button>
+           
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<button mat-icon-button  ><mat-icon>close</mat-icon>
+</button>
+
+<mat-dialog-content>
+    <header>
+        <h1>contact</h1>
+       <p>
+        <mat-form-field>
+            <input matInput placeholder="name">
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+       </p>
+       <p>
+        <mat-form-field>
+            <input matInput placeholder="name">
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+       </p>
+
+       
+    </header>
+</mat-dialog-content>
+-->
+
+

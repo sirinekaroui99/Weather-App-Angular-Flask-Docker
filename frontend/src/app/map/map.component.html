@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="map.component.scss">
+</head>
+<body>
+  <header class="pc-header " >
+		<div class="header-wrapper">
+			<div class="me-auto pc-mob-drp">
+			
+			</div>
+			<div class="ms-auto">
+				<ul class="list-unstyled">
+					<li class="dropdown pc-h-item">
+						<a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+							<i class="material-icons-two-tone">search</i>
+						</a>
+						<div class="dropdown-menu dropdown-menu-end pc-h-dropdown drp-search">
+							<form class="px-3">
+								<div class="form-group mb-0 d-flex align-items-center">
+									<i data-feather="search"></i>
+									<input type="search" class="form-control border-0 shadow-none" #key (keydown.enter)="searchlocation(key.value)" placeholder="Search here. . .">
+								</div>
+							</form>
+						</div>
+					</li>
+				
+					<li class="pc-h-item">
+           
+						<a class="pc-head-link me-0" href="#" data-bs-toggle="modal"  [routerLink]="['/notification', temp]">
+							<i class="material-icons-two-tone">notifications_active</i>
+							<span class="bg-danger pc-h-badge dots"><span class="sr-only"></span></span>
+						</a>
+         
+					</li>
+        
+					<li class="dropdown pc-h-item">
+						<a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+							
+							<span>
+								<span class="user-name">{{ username }}</span>
+								<span class="user-desc">User</span>
+							</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
+							
+							<a [routerLink]="['/profile']" target="_self" class="dropdown-item">
+								<i class="material-icons-two-tone">account_circle</i>
+								<span>Profile</span>
+							</a>
+
+							
+							<a class="dropdown-item" (click)="logout()">
+								<i class="material-icons-two-tone">chrome_reader_mode</i>
+								<span>Logout</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</header>
+    <!-- 
+    <div >
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: rgba(74, 71, 231, 0.555);" justify-content-end>
+            <a class="navbar-brand" href="#" style="color: bisque; text-shadow: 1px 1px 2px rgb(19, 12, 82), 0 0 1em rgb(124, 124, 228), 0 0 0.2em blue;">Weather App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav text-right">
+            
+               
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input type="search" #key (keydown.enter)="searchlocation(key.value)" 
+                name="key" id="city" class="form-control mr-sm-2" placeholder="Search location..." required>
+             </form>
+            </div>
+          </nav>
+    </div> 
+-->
+
+  <!-- navbar weather widget start-->
+  <div class="mm">
+  <div class="container">
+    <div class="weather-side">
+      <div class="weather-gradient"></div>
+      <div class="date-container">
+        <h2 class="date-dayname">{{weather?.date_time}}</h2><i class="location-icon" data-feather="map-pin"></i><span class="location">{{weather?.city}}</span>
+      </div>
+      <div class="weather-container">
+        <h1 class="weather-temp">{{weather?.temperature}}°C</h1>
+        <h3 class="weather-desc">{{weather?.weather_desc}}</h3>
+      </div>
+    </div>
+    <div class="info-side">
+      <div class="today-info-container">
+        <div class="today-info">
+          <div class="temperature_minimale"> <span class="title">minimal tempreture</span><span class="value">{{weather?.temperature_minimale}}°C</span>
+            <div class="clear"></div>
+          </div>
+          <div class="temperature_maximale"> <span class="title">Maximum tepreture</span><span class="value">{{weather?.temperature_maximale}}°C</span>
+            <div class="clear"></div>
+          </div>
+          <div class="humidity"> <span class="title">humidity</span><span class="value">{{weather?.Humidity}} %</span>
+            <div class="clear"></div>
+          </div>
+          <div class="pressure"> <span class="title">Presure</span><span class="value">{{weather?.pressure}} Pa</span>
+            <div class="clear"></div>
+          </div>
+          <div class="wind_speed"> <span class="title">Wind</span><span class="value">{{weather?.wind_speed}} km/h</span>
+            <div class="clear"></div>
+          </div>
+          <div class="sunrise_time"> <span class="title">Sunrise</span><span class="value">{{weather?.sunrise_time}}</span>
+            <div class="clear"></div>
+          </div>
+          <div class="sunset_time"> <span class="title">Sunset</span><span class="value">{{weather?.sunset_time}}</span>
+            
+            <div class="clear"></div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="week-container"  >
+        <ul class="week-list"   >
+          <li class="day-icon" *ngFor="let dailyWeather of dailyWeathers"><i class="day-icon" data-feather="sun">{{ dailyWeather.date | date:'longDate' }}</i><span class="day-temp">{{dailyWeather?.weathers[0].main.temp}}°C</span></li>
+          
+          <div class="clear"></div>
+        </ul>
+      </div>
+      
+    
+    </div>
+   
+  </div>
+<!-- navbar weather widget finish-->
+<div>
+    <div id="map"></div>    
+<form action="" class="form">
+    <input type="text" id="latitude" placeholder="latitude">
+    <input type="text" id="longitude" placeholder="longitude">
+</form>
+</div>
+</div>
+</body>
+
+
+<div class="pip">
+
+  <div class="container">
+   
+    <div class="info-side">
+ 
+    
+      <div class="week-container"  >
+        <ul class="week-list" >
+          <li class="day-icon" *ngFor="let we of firstDayWeathers" ><i class="day-icon" data-feather="sun">{{ we.formattedDate}}</i><span class="day-name">{{ we.weather.main.temp }}°C</span><span class="day-temp">{{ we.weather.weather.description }}</span></li>
+
+          <div class="clear"></div>
+        </ul>
+      </div>
+   
+   
+    
+    </div>
+   
+  </div> 
+
+</div>
+
+
+</html>

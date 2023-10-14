@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Weather Applicaion</title>
+
+</head> 
+
+<body class="">
+	<!-- [ Pre-loader ] start -->
+	<div class="loader-bg">
+		<div class="loader-track">
+			<div class="loader-fill"></div>
+		</div>
+	</div>
+	
+	<!-- [ Mobile header ] start -->
+	<div class="pc-mob-header pc-header">
+		<div class="pcm-logo">
+			<img src="/assets/images/logo.svg" alt="" class="logo logo-lg">
+		</div>
+		<div class="pcm-toolbar">
+			<a href="#!" class="pc-head-link" id="mobile-collapse">
+				<div class="hamburger hamburger--arrowturn">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+				<!-- <i data-feather="menu"></i> -->
+			</a>
+			<a href="#!" class="pc-head-link" id="headerdrp-collapse">
+				<i data-feather="align-right"></i>
+			</a>
+			<a href="#!" class="pc-head-link" id="header-collapse">
+				<i data-feather="more-vertical"></i>
+			</a>
+		</div>
+	</div>
+	<!-- [ Mobile header ] End -->
+
+	<!-- [ navigation menu ] start -->
+	<nav class="pc-sidebar ">
+		<div class="navbar-wrapper">
+			<div class="m-header">
+				<a href="index.html" class="b-brand">
+					<!-- ========   change your logo hear   ============ -->
+					<img src="./assets/images/logo.svg" alt="" class="logo logo-lg">
+					<img src="./assets/images/logo-sm.svg" alt="" class="logo logo-sm">
+				</a>
+			</div>
+			<div class="navbar-content">
+				<ul class="pc-navbar">
+					<li class="pc-item pc-caption">
+						<label>Navigation</label>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" class="pc-link "><span class="pc-micon"><i class="material-icons-two-tone">home</i></span><span
+								class="pc-mtext">Dashboard</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						
+					</li>
+					
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" class="pc-link "><span class="pc-micon"><i
+									class="material-icons-two-tone">account_circle</i></span><span class="pc-mtext">User</span><span
+								class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+					
+					</li>
+					
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" class="pc-link "><span class="pc-micon"><i
+									class="material-icons-two-tone">business_center</i></span><span class="pc-mtext">Basic</span><span
+								class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" class="pc-link "><span class="pc-micon"><i class="material-icons-two-tone">widgets</i></span><span
+								class="pc-mtext">Advance</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" class="pc-link "><span class="pc-micon"><i class="material-icons-two-tone">history_edu</i></span><span
+								class="pc-mtext">Icons</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+					
+					</li>
+		
+				
+				
+					
+				
+					
+					<li class="pc-item pc-caption">
+						<label>Chart & Maps</label>
+				
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" class="pc-link"><span class="pc-micon"><i class="material-icons-two-tone">layers</i></span><span
+								class="pc-mtext">Layouts</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+					
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" class="pc-link "><span class="pc-micon"><i
+									class="material-icons-two-tone">card_giftcard</i></span><span class="pc-mtext">Widget</span><span
+								class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+					
+					</li>
+							
+						
+					
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- [ navigation menu ] end -->
+	<!-- [ Header ] start -->
+	<header class="pc-header ">
+		<div class="header-wrapper">
+			<div class="me-auto pc-mob-drp">
+			
+			</div>
+			<div class="ms-auto">
+				<ul class="list-unstyled">
+					<li class="dropdown pc-h-item">
+						<a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+							<i class="material-icons-two-tone">search</i>
+						</a>
+						<div class="dropdown-menu dropdown-menu-end pc-h-dropdown drp-search">
+							<form class="px-3">
+								<div class="form-group mb-0 d-flex align-items-center">
+									<i data-feather="search"></i>
+									<input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . .">
+								</div>
+							</form>
+						</div>
+					</li>
+				
+					<li class="pc-h-item">
+						<a class="pc-head-link me-0" href="#" data-bs-toggle="modal">
+							<i class="material-icons-two-tone">notifications_active</i>
+							<span class="bg-danger pc-h-badge dots"><span class="sr-only"></span></span>
+						</a>
+					</li>
+					<li class="dropdown pc-h-item">
+						<a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+							<img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar">
+							<span>
+								<span class="user-name">Joseph William</span>
+								<span class="user-desc">Administrator</span>
+							</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
+							
+							<a href="user-profile.html" class="dropdown-item">
+								<i class="material-icons-two-tone">account_circle</i>
+								<span>Profile</span>
+							</a>
+
+							
+							<a href="auth-signin-3.html" class="dropdown-item">
+								<i class="material-icons-two-tone">chrome_reader_mode</i>
+								<span>Logout</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</header>
+
+	<!-- Modal -->
+	
+	<!-- [ Header ] end -->
+<!-- [ Main Content ] start -->
+<div class="pc-container">
+	<div class="pcoded-content">
+		<!-- [ breadcrumb ] start -->
+		
+		<!-- [ breadcrumb ] end -->
+		<!-- [ Main Content ] start -->
+		<div class="row">
+		
+				<div class="tab-content" id="myTabContent">
+				
+					<div class="col-xl-5 col-md-6">
+						
+						<div class="card">
+							<div class="card-header">
+								<div class="row align-items-center">
+									<div class="col">
+										<div class="row align-items-center">
+											<div class="col-auto col pr-0">
+												<img class="img-radius img-fluid wid-60" src="../assets/images/user/avatar-2.jpg" alt="User image">
+											</div>
+											<div class="col">
+												<h6 class="mb-1">Josephin Doe</h6>
+												<p class="mb-0">UI/UX Designer</p>
+											</div>
+										</div>
+									</div>
+									<div class="col col-auto">
+										<button class="btn btn-primary" >Edit</button>
+									</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="row text-center">
+									<div class="col">
+										<h6 class="mb-1">69</h6>
+										<p class="mb-0">Shots</p>
+									</div>
+									<div class="col">
+										<h6 class="mb-1">2749</h6>
+										<p class="mb-0">Followers</p>
+									</div>
+									<div class="col">
+										<h6 class="mb-1">678</h6>
+										<p class="mb-0">Following</p>
+									</div>
+									<div class="col">
+										<h6 class="mb-1">78</h6>
+										<p class="mb-0">Like</p>
+									</div>
+								</div>
+							</div>
+							<div class="card-footer">
+								<div class="row align-items-center">
+									<div class="col">
+										<a href="#!"><i class="feather icon-mail"></i> Message</a>
+									</div>
+									<div class="col col-auto">
+										<button class="btn  btn-secondory btn-sm m-0">Follow</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			
+		</div>
+		<!-- [ Main Content ] end -->
+	</div>
+</div>
+
+    
+
+
+
+</body>
+
+
+
+</html>
+
+

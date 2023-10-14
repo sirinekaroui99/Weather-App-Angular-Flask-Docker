@@ -1,0 +1,21 @@
+pip uninstall kafka
+pip install kafka-python
+pip install passlib
+pip install flask_jwt_extended
+pip install flask_cors
+
+dockerfile: 
+
+FROM python:3.9-slim-buster
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY . .
+
+EXPOSE 5000
+
+CMD python ./app.py
